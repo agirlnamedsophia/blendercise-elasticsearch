@@ -2,11 +2,6 @@ class Recipe < ActiveRecord::Base
   # belongs_to :cookbook
   has_many :categories
 
-  # Chewy.atomic do
-  #   Recipe.all.each { |recipe| recipe.update_attributes(title: recipe.title.strip) }
-  # end
-
-  update_index 'food#recipe', :self, urgent: true
   accepts_nested_attributes_for :categories, allow_destroy: true
 
   def category
@@ -16,4 +11,10 @@ class Recipe < ActiveRecord::Base
 
   class << self
   end
+
+  # Chewy.atomic do
+  #   Recipe.all.each { |recipe| recipe.update_attributes(title: recipe.title.strip) }
+  # end
+
+  update_index 'food#recipe', :self, urgent: true
 end

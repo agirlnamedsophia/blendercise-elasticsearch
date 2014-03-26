@@ -2,7 +2,7 @@ class FoodController < ApplicationController
 
   def index
 
-    @search = params[:search].blank? ? FoodSearch.new(query: 'Cookies') : FoodSearch.new(params[:search])
+    @search = params[:search].blank? ? FoodSearch.new(query: 'breakfast') : FoodSearch.new(params[:search])
 
     @food = @search.search.only(:id).page(params[:page]).load(
       recipe: {scope: Recipe },

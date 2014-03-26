@@ -1,4 +1,34 @@
-Setup on Ubuntu:
+to set up search:
+
+add these to your gem files. active_data is used for tableless models for the search interface.
+
+  gem 'chewy'
+  gem 'active_data', github: 'pyromaniac/active_data'
+
+add chewy.rb to your initializers with Chewy.logger = Rails.logger.
+
+create a chewy.yml with localhost config
+
+  test:
+    host: 'l:9200'
+    prefix: 'test'
+  development:
+    host: 'l:9200'
+
+create search directory inside your app for a multi-indexed search class. call it whatever you want + _search.rb
+
+this will define your search, and here you can include sorting and searching filters. you can set up post_filters
+and rescoring for more exact indexing. rescoring is executed on a specific shard before returning results to
+be sorted by the node.
+
+you define your index inside the chewy directory (also within the app).
+
+call it the same as the search + _index.rb
+
+specify index-specific settings here for sorting and analyzing. define your model searches. 
+
+
+setup on Ubuntu:
 
 wget -O - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add -
 

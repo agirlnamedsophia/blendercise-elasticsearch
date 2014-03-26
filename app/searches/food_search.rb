@@ -16,7 +16,7 @@ class FoodSearch
   end
 
   def search
-    query_string
+    [query_string, category_id_filter].compact.reduce(:merge)
   end
 
   def sorting
