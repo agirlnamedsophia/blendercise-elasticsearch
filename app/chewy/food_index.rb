@@ -11,11 +11,11 @@ class FoodIndex < Chewy::Index
       }
     }
   }
-
-  define_type Category.includes(:recipes) do
-    field :name, analyzer: 'title'
-    field :recipe_id, type: 'integer'
-  end
+  # 
+  # define_type Category.includes(:recipes) do
+  #   field :name, analyzer: 'title'
+  #   field :recipe_id, type: 'integer'
+  # end
 
   define_type Recipe.includes(:categories) do
     field :title
