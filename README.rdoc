@@ -42,3 +42,9 @@ sudo service elasticsearch [force-reload, restart, start, status, stop]
 check url:9200 to see if it's running
 
 should respond with json.
+
+
+references:
+http://github.com/toptal/chewy
+http://www.toptal.com/ruby-on-rails/elasticsearch-for-ruby-on-rails-an-introduction-to-chewy
+http://github.com/toptal/chewy_example/

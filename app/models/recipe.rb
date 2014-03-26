@@ -15,5 +15,5 @@ class Recipe < ActiveRecord::Base
   #   Recipe.all.each { |recipe| recipe.update_attributes(title: recipe.title.strip) }
   # end
 
-  # update_index 'food#recipe', :self, urgent: true
+  update_index 'food#recipe', :self, urgent: true
 end
