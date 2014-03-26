@@ -16,7 +16,7 @@ class FoodSearch
   end
 
   def search
-    [query_string, category_id_filter].compact.reduce(:merge)
+    query_string
   end
 
   def sorting
@@ -24,7 +24,7 @@ class FoodSearch
   end
 
   def query_string
-    index.query(query_string: {fields: [:title, :instructions, :name, :ingredients, :category], query: query, default_operator: 'and'}) if query?
+    index.query(query_string: {fields: [:title, :instructions, :ingredients, :category], query: query, default_operator: 'and'}) if query?
   end
 
   def category_id_filter

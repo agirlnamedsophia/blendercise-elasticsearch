@@ -2,5 +2,7 @@ class Category < ActiveRecord::Base
   has_many :recipes
   # has_many :cookbooks
 
-  update_index 'food#recipe', :recipe
+  # update_index 'food#recipe', :recipe
+  class << self
+  end
 end

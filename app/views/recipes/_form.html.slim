@@ -2,7 +2,7 @@
   = f.input :title
   = f.input :ingredients
   = f.input :instructions
-  = f.input :category, collection: Category.all(order: 'name'), prompt: "Choose a Category"
+  = f.input :category_id, collection: Category.all.map { |d| [d.name, d.id]}, prompt: "Choose a Category"
 
   - if @recipe.errors.any?
     #error_explanation

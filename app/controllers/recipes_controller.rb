@@ -58,9 +58,8 @@ class RecipesController < ApplicationController
         :ingredients,
         :instructions,
         :category_id,
-        :cookbook_id,
-        category_attributes: [:id, :name],
-      )
+        category_ids: [],
+        )
     end
 
 end
