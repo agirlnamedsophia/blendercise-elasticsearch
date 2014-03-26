@@ -5,7 +5,6 @@ class CreateRecipes < ActiveRecord::Migration
       t.text :ingredients
       t.text :instructions
       t.integer :category_id
-      t.integer :cookbook_id
 
       t.timestamps
     end

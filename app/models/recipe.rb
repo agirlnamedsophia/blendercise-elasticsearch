@@ -1,12 +1,11 @@
 class Recipe < ActiveRecord::Base
-  # belongs_to :cookbook
   has_many :categories
 
   accepts_nested_attributes_for :categories, allow_destroy: true
 
   def category
     category = Category.where(id: self.category_id).first
-    return category
+    return category.name
   end
 
   class << self
@@ -16,5 +15,5 @@ class Recipe < ActiveRecord::Base
   #   Recipe.all.each { |recipe| recipe.update_attributes(title: recipe.title.strip) }
   # end
 
-  update_index 'food#recipe', :self, urgent: true
+  # update_index 'food#recipe', :self, urgent: true
 end

@@ -1,14 +1,14 @@
 = simple_form_for @search, as: :search, url: food_index_url, method: :get do |f|
   = f.input :query, required: true
-  = f.input :category_id, collection: Category.all.map { |d| [d.name, d.id] }, include_blank: true, prompt: "Choose a Category"
+  = f.input :category_id, collection: Category.all.map { |d| [d.name, d.id] }, include_blank: false, prompt: "Choose a Category"
   = f.button :submit
 
 - if @food.any?
   - @food.each do |food|
       div
         h1= food.title
-
-        h2= food.category.name
+      br
+        h2= food.category
       div
         p = food.ingredients
         p = food.instructions
@@ -19,3 +19,14 @@
     = @error
   - else
     p No results yet!
+
+
+br
+
+= link_to 'New Recipe', new_recipe_path
+
+br
+
+= link_to 'Create Category', categories_path
+
+br

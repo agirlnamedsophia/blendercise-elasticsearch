@@ -25,7 +25,7 @@ you define your index inside the chewy directory (also within the app).
 
 call it the same as the search + _index.rb
 
-specify index-specific settings here for sorting and analyzing. define your model searches. 
+specify index-specific settings here for sorting and analyzing. define your model searches.
 
 
 setup on Ubuntu:

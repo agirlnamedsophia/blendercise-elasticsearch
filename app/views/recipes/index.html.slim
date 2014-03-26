@@ -11,7 +11,7 @@ table
     - @recipes.each do |recipe|
       tr
         td = recipe.title
-        td = recipe.category_id
+        td = recipe.category
 
       tr
         td = link_to 'Show', recipe
@@ -21,3 +21,11 @@ table
 br
 
 = link_to 'New Recipe', new_recipe_path
+
+br
+
+= link_to 'Create Category', categories_path
+
+br
+
+= link_to 'Search', root_url

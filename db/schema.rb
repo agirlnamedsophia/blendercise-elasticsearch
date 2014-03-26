@@ -19,16 +19,6 @@ ActiveRecord::Schema.define(version: 20140326144750) do
   create_table "categories", force: true do |t|
     t.string   "name"
     t.integer  "recipe_id"
-    t.integer  "cookbook_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "cookbooks", force: true do |t|
-    t.string   "title"
-    t.string   "author"
-    t.integer  "publication_date"
-    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,7 +28,6 @@ ActiveRecord::Schema.define(version: 20140326144750) do
     t.text     "ingredients"
     t.text     "instructions"
     t.integer  "category_id"
-    t.integer  "cookbook_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

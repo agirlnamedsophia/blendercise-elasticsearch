@@ -3,7 +3,6 @@ class CreateCategories < ActiveRecord::Migration
     create_table :categories do |t|
       t.string :name
       t.integer :recipe_id
-      t.integer :cookbook_id
 
       t.timestamps
     end
