@@ -1,45 +1,66 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.0.3'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
+gem 'asset_sync'
+gem 'aws-sdk'
+gem 'cancan'
+gem 'chewy'
+gem 'chosen-rails'
+gem 'compass-rails'
+gem 'devise'
+gem 'dragonfly', '~>1.0.0'
+gem 'forgery'
 gem 'jquery-rails'
+gem 'kaminari'
+gem 'nested_form'
+gem 'pg'
+gem 'rack-cache', require: 'rack/cache'
+gem 'sass-rails', '~> 4.0.0'
+gem 'simple_form'
+gem 'slim-rails'
+gem 'tinymce-rails', git: 'git://github.com/spohlenz/tinymce-rails.git', branch: 'tinymce-4'
+gem 'uglifier', '>= 1.3.0'
+gem 'unf' # This is required for security by asset_sync
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+group :development do
+  gem 'bullet'
+  # gem 'capistrano',  '~> 3.0.0'
+  # gem 'capistrano-bundler'
+  # gem 'capistrano-rails'
+  gem 'quiet_assets'
+  #gem 'rack-livereload'
+  # gem 'rb-fsevent', require: false if RUBY_PLATFORM =~ /darwin/i
+  gem 'spring'
+  gem 'thin'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :development, :test do
+  gem 'annotate'
+  gem 'capybara'
+  gem 'database_cleaner', git: 'git://github.com/bmabey/database_cleaner.git'
+  gem 'factory_girl_rails'
+  gem 'guard-annotate'
+  gem 'guard-bundler'
+  #gem 'guard-livereload'
+  gem 'guard-rspec', require: false
+  #gem 'launchy' # To open the rspec output in an HTML file.
+  gem 'rspec-rails', '~> 2.0'
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :production, :stage do
+  gem 'daemons'
+  gem 'dalli'
+  gem 'dragonfly-s3_data_store'
+  gem 'exception_notification'
+  gem 'fog'
+  gem 'therubyracer', platforms: :ruby
+  gem 'whenever', require: false
+end
