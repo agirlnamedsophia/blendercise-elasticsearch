@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.3'
 
 gem 'chewy'
-gem 'elasticsearch-extensions'
 gem 'active_data', github: 'pyromaniac/active_data'
 
 gem 'asset_sync'

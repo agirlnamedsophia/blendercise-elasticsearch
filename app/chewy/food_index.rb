@@ -13,10 +13,7 @@ class FoodIndex < Chewy::Index
   }
 
   define_type Recipe.joins(:category) do
-    field :title, type: 'multi_field' do
-      field :title, index: 'analyzed', analyzer: 'title'
-      field :sorted, index: 'analyzed', analyzer: 'sorted'
-    end
+    field :title
 
     field :ingredients
     field :instructions
