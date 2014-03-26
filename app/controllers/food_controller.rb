@@ -4,8 +4,9 @@ class FoodController < ApplicationController
 
     @search = params[:search].blank? ? FoodSearch.new(query: 'eggs') : FoodSearch.new(params[:search])
 
-    @food = @search.search.only(:id).page(params[:page]).load(
-      recipe: {scope: Recipe },
+    @food = @search.search.only(:id).load(
+      recipe: {scope: Recipe.includes(:categories) },
+      category: {scope: Category },
     )
   rescue Elasticsearch::Transport::Transport::Errors::BadRequest => e
     @food = []
