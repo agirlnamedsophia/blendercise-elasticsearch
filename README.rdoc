@@ -1,1 +1,14 @@
-This is example code for rails use of the Elasticsearch gem. 
+Setup on Ubuntu:
+
+wget -O - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add -
+
+paste
+deb http://packages.elasticsearch.org/elasticsearch/1.0/debian stable main
+in your /etc/apt/sources.list
+
+apt-get update && apt-get install elasticsearch
+
+sudo service elasticsearch [force-reload, restart, start, status, stop]
+check url:9200 to see if it's running
+
+should respond with json.
