@@ -1,0 +1,15 @@
+= simple_form_for @recipe do |f|
+  = f.input :title
+  = f.input :ingredients
+  = f.input :instructions
+  = f.input :category, collection: Category.all(order: 'name'), prompt: "Choose a Category"
+
+  - if @recipe.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@recipe.errors.count, "error")} prohibited this recipe from being saved:"
+      ul
+        - @recipe.errors.full_messages.each do |message|
+          li = message
+
+  .actions
+    = f.button :submit

@@ -1,0 +1,16 @@
+= simple_form_for @search, as: :search, url: root_url, method: :get do |f|
+  = f.input :query
+  = f.input :category_id, collection: Category.all.map { |d| [d.name, d.id] }, include_blank: true, prompt: "Choose a Category"
+  = f.button :submit
+
+- if @food.any?
+  - @food.each do |food|
+      div
+        h1= food.title
+
+  = paginate @food
+- else
+  - if @error
+    = @error
+  - else
+    p No results yet!

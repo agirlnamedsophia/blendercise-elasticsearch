@@ -1,0 +1,14 @@
+= simple_form_for @cookbook do |f|
+  = f.input :title
+  = f.input :author
+  = f.input :publication_date
+  = f.association :categories, collection: Category.all(order: 'name'), prompt: "Choose a Category"
+
+  - if @cookbook.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@cookbook.errors.count, "error")} prohibited this cookbook from being saved:"
+      ul
+        - @cookbook.errors.full_messages.each do |message|
+          li = message
+
+  .actions = f.submit :submit

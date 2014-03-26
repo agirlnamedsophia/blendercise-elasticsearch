@@ -1,0 +1,5 @@
+test:
+  host: 'l:9200'
+  prefix: 'test'
+development:
+  host: 'l:9200'
